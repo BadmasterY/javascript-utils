@@ -1,0 +1,22 @@
+{
+    "presets": [
+        "react",
+        [
+            "env",
+            {
+                "modules": false
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "syntax-dynamic-import",
+            "import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": "css"
+            }
+        ]
+    ]
+}

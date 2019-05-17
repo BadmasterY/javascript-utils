@@ -1,6 +1,6 @@
 /*!
  * Easy async ajax with promise
- * ajax - v0.0.1 (2019-05-17 16:41:57)
+ * ajaxPromise - v0.0.1 (2019-05-17 16:41:57)
  * Author: Mr. 854007673@qq.com
  * describe: easy ajax and promise.
  */

@@ -1,11 +1,11 @@
 /*!
  * JavaScript Finite State Machine
- * stateMachine - v0.0.1 (2019-05-15 15:39:55)
+ * stateMachine - v0.0.2 (2019-05-17 13:16:57)
+ * add .to() transition to some state
  */
 
-let id = 0;
-
 const StateMachine = (function () {
+    let ID = 0;
 
     function _err(msg){
         throw new Error(msg);
@@ -25,6 +25,16 @@ const StateMachine = (function () {
      */
     function _pre() {
         this.state = _getPreState.call(this, this.state);
+
+        _transition.call(this);
+    }
+    
+    /**
+     * 过渡到某种状态
+     * @param {String} state 某一种状态
+     */
+    function _to(state){
+        this.state = state;
 
         _transition.call(this);
     }
@@ -88,7 +98,7 @@ const StateMachine = (function () {
         this.transitions = [].concat(transitions); // 
         this.methods = Object.assign({}, methods);
 
-        this.id = id++; // 状态机id
+        this.id = ID++; // 状态机id
     };
 
     Object.assign(stateMachine.prototype, {
@@ -103,6 +113,11 @@ const StateMachine = (function () {
          * 进入上一状态方法
          */
         pre: _pre,
+
+        /**
+         * 过渡到某种状态
+         */
+        to: _to,
 
         /**
          * 表示state是否为当前状态

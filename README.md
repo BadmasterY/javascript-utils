@@ -37,9 +37,9 @@ npm run build
     ],
     methods: {
         onUnStart: () => {console.log(`This state is 'UnStart'.`);},
-        onStart: () => {console.log(`This state is 'UnStart'.`);},
-        onEnd: () => {console.log(`This state is 'UnStart'.`);},
-        onStateChange: () => {console.log(`This state is 'UnStart'.`);}
+        onStart: () => {console.log(`This state is 'Start'.`);},
+        onEnd: () => {console.log(`This state is 'End'.`);},
+        onStateChange: () => {console.log(`This function will be triggered immediately every time the state changes.`);}
     }
 }
 ```

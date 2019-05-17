@@ -44,7 +44,7 @@ npm run build
 }
 ```
 
-**初始化方法：**
+#### 使用方法：
 
 ```
 const stateMachine = new utils.stateMachine(opts);
@@ -80,3 +80,49 @@ const stateMachine = new utils.stateMachine(opts);
 #### stateMachine.id
 
 获取当前状态机id，出现错误或异常将在控制台抛出状态机id
+
+
+### ajax(opts, success, error)
+
+> 简易异步ajax
+
+- **opts**: [Object] ajax配置信息
+- **success**: [Function] 成功执行之后的callback
+- **error**: [Function] 失败之后的callback
+  
+**opts完整配置信息如下:**
+```
+{
+    async: true,
+    url: "http://localhost:8080",
+    type: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "cache-control": "no-cache"
+    },
+    data: ''
+}
+```
+
+#### 使用方法:
+```
+utils.ajax(opts, success, error);
+```
+
+### ajaxPromise(opts)
+
+> 基于Promise的简易异步ajax
+
+- **opts**: [Object] ajax配置信息
+- **return** Promise
+  
+opts与ajax配置信息一致，不再赘述
+
+#### 使用方法:
+```
+const promise = utils.ajaxPromise(opts);
+
+promise.then(data => {
+    console.log(data);
+}).catch(err => { throw new Error(err); })
+```

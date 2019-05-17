@@ -5,9 +5,13 @@
  * describe: Maybe sometimes you don't need such a huge class library as jquery.
  */
 
+const { message } = require('./message');
+
 // async ajax
-exports.ajax = function ajax(opts, success, err) {
-    if (opts.async === false) message('err', `Can't use sync! If you need sync , please implement!`);
+exports.ajax = function ajax({
+    async = true, data = '', type = 'GET', url = message('err', `'url' is not found.`), headers
+}, success, err) {
+    if (async === false) message('err', `Can't use sync! If you need sync , please implement!`);
 
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -20,21 +24,21 @@ exports.ajax = function ajax(opts, success, err) {
         }
     }
 
-    let urlStr = opts.data;
+    let urlStr = data;
 
-    if (opts.type.toLowerCase() === 'get') {
-        xhr.open('get', `${opts.url}?${urlStr}`, true);
+    if (type.toLowerCase() === 'get') {
+        xhr.open('get', `${url}?${urlStr}`, true);
         xhr.send();
     }
 
-    if (opts.type.toLowerCase() === 'post') {
-        xhr.open('post', opts.url, true);
+    if (type.toLowerCase() === 'post') {
+        xhr.open('post', url, true);
 
-        if (!opts.headers) {
+        if (!headers) {
             xhr.setRequestHeader('Content-Type', 'application/json');
         } else {
-            for (let key in opts.headers) {
-                xhr.setRequestHeader(`${key}`, `${opts.headers[key]}`);
+            for (let key in headers) {
+                xhr.setRequestHeader(`${key}`, `${headers[key]}`);
             }
         }
 

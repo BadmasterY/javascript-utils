@@ -29,8 +29,7 @@ const commonConfig = merge([
             new webpack.BannerPlugin(
 `JavaScript Utils (library ?_?)
 utils - v${config.version} (${new Date()})
-Mr. 854007673@qq.com
-Released under MIT license`
+Released under ISC license`
                )
         ],
         resolve: {

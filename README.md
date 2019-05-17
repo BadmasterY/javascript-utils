@@ -16,7 +16,7 @@ npm run build
 ## API:
 
 ### stateMachine({ init, transitions, methods })
-
+   
 添加时间: 2019-05-15
 修改时间: 2019-05-17
 
@@ -58,7 +58,7 @@ const stateMachine = new utils.stateMachine(opts);
 
 #### stateMachine.to(state)
 
-新增于 stateMachine v0.0.2
+*新增于 stateMachine v0.0.2*
 
 - **state**: [String] 状态(可以为状态链之外的状态) 如: to('Error'),将触发'onError()'
 
@@ -67,6 +67,6 @@ const stateMachine = new utils.stateMachine(opts);
 #### stateMachine.is(state)
 
 - **state**: [String] 状态
-- return [Boolean]
+- **return** [Boolean]
 
 判断当前状态是否为给定的状态

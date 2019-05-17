@@ -1,7 +1,7 @@
 /*!
  * Unified Message Export
  * message - v0.0.1 (2019-05-17 15:38:39)
- * Author: Mr.
+ * Author: Mr. 854007673@qq.com
  */
 
 exports.message = function () {

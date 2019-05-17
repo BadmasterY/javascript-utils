@@ -1,7 +1,7 @@
 /*!
  * JavaScript Finite State Machine
  * stateMachine - v0.0.2 (2019-05-17 13:16:57)
- * Author: Mr.
+ * Author: Mr. 854007673@qq.com
  * add .to() transition to some state
  */
 

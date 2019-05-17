@@ -5,6 +5,8 @@
  * describe: Maybe sometimes you don't need such a huge class library as jquery.
  */
 
+const { message } = require('./message');
+
 // async ajax
 exports.ajax = function ajax(opts, success, err) {
     if (opts.async === false) message('err', `Can't use sync! If you need sync , please implement!`);

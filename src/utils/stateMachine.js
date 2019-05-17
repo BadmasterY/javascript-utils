@@ -5,12 +5,10 @@
  * add .to() transition to some state
  */
 
+const { message } = require('./message');
+
 const StateMachine = (function () {
     let ID = 0;
-
-    function _err(msg){
-        throw new Error(msg);
-    }
 
     /**
      * 下一状态
@@ -29,12 +27,12 @@ const StateMachine = (function () {
 
         _transition.call(this);
     }
-    
+
     /**
      * 过渡到某种状态
      * @param {String} state 某一种状态
      */
-    function _to(state){
+    function _to(state) {
         this.state = state;
 
         _transition.call(this);
@@ -76,11 +74,11 @@ const StateMachine = (function () {
         if (this.methods.onStateChange instanceof Function) this.methods.onStateChange(this.state);
 
         if (!(this.methods['on' + this.state])) {
-            console.error(`ID ${this.id}: function 'on${this.state}' is not defined.`);
+            message('warn', `ID ${this.id}: function 'on${this.state}' is not defined.`);
             return;
         }
 
-        if(this.methods['on' + this.state] instanceof Function)this.methods['on' + this.state]();
+        if (this.methods['on' + this.state] instanceof Function) this.methods['on' + this.state]();
     }
 
     /**
@@ -88,9 +86,9 @@ const StateMachine = (function () {
      * @param {Object} opts 包含状态机必须参数的对象
      */
     let stateMachine = function ({
-        init = _err(`'init' is not defined.`),
-        transitions = _err(`'transitions' is not defined.`),
-        methods = _err(`'methods' is not defined.`)
+        init = message('err', `'init' is not defined.`),
+        transitions = message('err', `'transitions' is not defined.`),
+        methods = message('err', `'methods' is not defined.`)
     }) {
         // 安全模式类
         if (!(this instanceof stateMachine)) return new stateMachine({ init, transitions, methods });
@@ -134,7 +132,7 @@ const StateMachine = (function () {
          */
         can(event) {
             // 保留接口
-            console.warn('保留接口，暂未实现');
+            message('warn', '保留接口，暂未实现');
             return false;
         },
 
@@ -144,7 +142,7 @@ const StateMachine = (function () {
          */
         cannot(event) {
             // 保留接口
-            console.warn('保留接口，暂未实现');
+            message('warn', '保留接口，暂未实现');
             return false;
         }
     });

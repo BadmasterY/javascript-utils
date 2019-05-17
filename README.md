@@ -72,3 +72,11 @@ const stateMachine = new utils.stateMachine(opts);
 - **return** [Boolean]
 
 判断当前状态是否为给定的状态
+
+#### stateMachine.state
+
+获取当前状态机状态
+
+#### stateMachine.id
+
+获取当前状态机id，出现错误或异常将在控制台抛出状态机id

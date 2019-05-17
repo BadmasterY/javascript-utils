@@ -16,6 +16,8 @@ npm run build
 ## API:
 
 ### stateMachine({ init, transitions, methods })
+
+> 简易javascript有限状态机.
    
 添加时间: 2019-05-15
 修改时间: 2019-05-17

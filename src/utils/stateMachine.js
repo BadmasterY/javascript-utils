@@ -73,14 +73,14 @@ const StateMachine = (function () {
      */
     function _transition() {
 
-        if (this.methods.onStateChange) this.methods.onStateChange(this.state);
+        if (this.methods.onStateChange instanceof Function) this.methods.onStateChange(this.state);
 
         if (!(this.methods['on' + this.state])) {
-            console.error(`on${this.state}: This function is not defined.`);
+            console.error(`ID ${this.id}: function 'on${this.state}' is not defined.`);
             return;
         }
 
-        this.methods['on' + this.state]();
+        if(this.methods['on' + this.state] instanceof Function)this.methods['on' + this.state]();
     }
 
     /**

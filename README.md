@@ -15,7 +15,7 @@ npm run build
 
 ## API:
 
-### stateMachine({ init, transitions, methods })
+### 1. stateMachine({ init, transitions, methods })
 
 > 简易javascript有限状态机.
    
@@ -50,15 +50,15 @@ npm run build
 const stateMachine = new utils.stateMachine(opts);
 ```
 
-#### stateMachine.next()
+#### 1.1 stateMachine.next()
 
 使当前状态转移到下一状态，触发对应状态(下一状态)的 callback
 
-#### stateMachine.pre()
+#### 1.2 stateMachine.pre()
 
 使当前状态转移到上一状态，触发对应状态(上一状态)的 callback
 
-#### stateMachine.to(state)
+#### 1.3 stateMachine.to(state)
 
 *新增于 stateMachine v0.0.2*
 
@@ -66,25 +66,27 @@ const stateMachine = new utils.stateMachine(opts);
 
 使当前状态转移到某种状态，触发对应某种状态的 callback
 
-#### stateMachine.is(state)
+#### 1.4 stateMachine.is(state)
 
 - **state**: [String] 状态
 - **return** [Boolean]
 
 判断当前状态是否为给定的状态
 
-#### stateMachine.state
+#### 1.5 stateMachine.state
 
 获取当前状态机状态
 
-#### stateMachine.id
+#### 1.6 stateMachine.id
 
 获取当前状态机id，出现错误或异常将在控制台抛出状态机id
 
 
-### ajax(opts, success, error)
+### 2. ajax(opts, success, error)
 
 > 简易异步ajax
+
+添加时间: 2019-05-17
 
 - **opts**: [Object] ajax配置信息
 - **success**: [Function] 成功执行之后的callback
@@ -109,9 +111,11 @@ const stateMachine = new utils.stateMachine(opts);
 utils.ajax(opts, success, error);
 ```
 
-### ajaxPromise(opts)
+### 3. ajaxPromise(opts)
 
 > 基于Promise的简易异步ajax
+
+添加时间: 2019-05-17
 
 - **opts**: [Object] ajax配置信息
 - **return** Promise
@@ -125,4 +129,60 @@ const promise = utils.ajaxPromise(opts);
 promise.then(data => {
     console.log(data);
 }).catch(err => { throw new Error(err); })
+```
+
+### 4. intersection(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的交集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.intersection(arr1, arr2);
+```
+
+### 5. differenceSet(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的差集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.differenceSet(arr1, arr2);
+```
+
+### 6. complementSet(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的补集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.complementSet(arr1, arr2);
+```
+
+### 7. union(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的并集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.union(arr1, arr2);
 ```

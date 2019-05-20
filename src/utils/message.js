@@ -17,8 +17,8 @@ exports.message = function () {
             msg = args[0];
             break;
         case '2':
-            type = args[1];
-            msg = args[2];
+            type = args[0];
+            msg = args[1];
             break;
         default:
             throw new Error(`This arguments length: ${args.length}.`);

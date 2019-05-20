@@ -130,3 +130,59 @@ promise.then(data => {
     console.log(data);
 }).catch(err => { throw new Error(err); })
 ```
+
+### 4. intersection(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的交集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.intersection(arr1, arr2);
+```
+
+### 5. differenceSet(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的差集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.differenceSet(arr1, arr2);
+```
+
+### 6. complementSet(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的补集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.complementSet(arr1, arr2);
+```
+
+### 7. union(arr1, arr2)
+
+> 求两个数组之间(arr1与arr2)的并集
+
+添加时间: 2019-05-20
+
+- **arr1**: [Array]
+- **arr2**: [Array]
+
+#### 使用方法:
+```
+const result = utils.union(arr1, arr2);
+```

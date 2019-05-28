@@ -186,3 +186,25 @@ const result = utils.complementSet(arr1, arr2);
 ```
 const result = utils.union(arr1, arr2);
 ```
+
+### 8. dataType(data)
+
+> 检测数据类型
+
+添加时间: 2019-05-28
+
+- **data**: 传入的需要检测类型的数据
+- **return**:
+   - undefined
+   - null
+   - Number
+   - String
+   - Array
+   - Function
+   - Object
+   - Symbol
+
+#### 使用方法:
+```
+utils.dataType(data) == null;
+```

@@ -10,9 +10,9 @@ function union(arr1, arr2){
 
     let temp = arr1.filter(value => arr2.indexOf(value) === -1);
 
-    let result = [].concat(arr1, temp);
+    let result = [].concat(arr2, temp);
 
-    return result;
+    return result.sort();
 }
 
 exports.union = union;

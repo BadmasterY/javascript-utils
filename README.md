@@ -209,5 +209,5 @@ const result = utils.union(arr1, arr2);
 
 #### 使用方法:
 ```
-utils.dataType(data) == null;
+utils.dataType(null) == 'Null';
 ```

@@ -214,7 +214,7 @@ utils.dataType(null) == 'Null'; ==> true
 
 ### 9. isType(data)
 
-> 检测数据类型
+> 判断数据类型
 
 添加时间: 2019-05-30
 
@@ -223,5 +223,8 @@ utils.dataType(null) == 'Null'; ==> true
 
 #### 使用方法:
 ```
-utils.isType(null)('Null'); ==> true
+let checkFn = utils.isType(null);
+checkFn('Null'); ==> true
+checkFn('Undefined'); ==> false
+checkFn('Number'); ==> false
 ```

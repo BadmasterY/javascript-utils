@@ -1,5 +1,6 @@
 # javascript-utils
-某渣渣在工作中常用的工具/类的整理
+~~某渣渣在工作中常用的工具/类的整理~~
+邀请了几个好友一起维护的工具
 
 ## Use:
 
@@ -17,7 +18,7 @@ npm run build
 
 ### 1. stateMachine({ init, transitions, methods })
 
-> 简易javascript有限状态机.
+> 简易javascript抽象状态机.
    
 添加时间: 2019-05-15
 修改时间: 2019-05-17
@@ -185,4 +186,42 @@ const result = utils.complementSet(arr1, arr2);
 #### 使用方法:
 ```
 const result = utils.union(arr1, arr2);
+```
+
+### 8. dataType(data)
+
+> 检测数据类型
+
+添加时间: 2019-05-28
+
+- **data**: 传入的需要检测类型的数据
+- **return**: [String]
+   - Undefined
+   - Null
+   - Number
+   - String
+   - Array
+   - Function
+   - Object
+   - Symbol
+   - Error
+   - ....(如果数据正确，可以返回js所有数据的准确类型)
+
+#### 使用方法:
+```
+utils.dataType(null) == 'Null'; ==> true
+```
+
+### 9. isType(data)
+
+> 检测数据类型
+
+添加时间: 2019-05-30
+
+- **data**: 传入的需要检测类型的数据
+- **return**: [Function]
+
+#### 使用方法:
+```
+utils.isType(null)('Null'); ==> true
 ```

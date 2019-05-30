@@ -194,15 +194,17 @@ const result = utils.union(arr1, arr2);
 添加时间: 2019-05-28
 
 - **data**: 传入的需要检测类型的数据
-- **return**:
-   - undefined
-   - null
+- **return**: [String]
+   - Undefined
+   - Null
    - Number
    - String
    - Array
    - Function
    - Object
    - Symbol
+   - Error
+   - ....(如果数据正确，可以返回js所有数据的准确类型)
 
 #### 使用方法:
 ```

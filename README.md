@@ -211,3 +211,30 @@ const result = utils.union(arr1, arr2);
 ```
 utils.dataType(null) == 'Null';
 ```
+
+### 9. curryingTypes(type)
+> 检测数据类型
+
+添加时间: 2019-06-28
+
+- **type** [String]
+   - Undefined
+   - Null
+   - Number
+   - String
+   - Array
+   - Function
+   - Object
+   - Symbol
+   - Error
+   - ...
+- **return** [data => boolean]
+  - **data**: 用于比较类型的数据
+  - **return**: 返回 `boolean`
+
+#### 使用方法:
+```js
+const isNumber = utils.curryingTypes('Number');
+isNumber(1); // ==> true
+isNumber('1'); // ==> false
+```
